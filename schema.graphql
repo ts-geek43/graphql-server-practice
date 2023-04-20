@@ -1,0 +1,52 @@
+enum NAMEGENDER {
+  male
+  female
+  unisex
+}
+
+type Engineer {
+  id: Int
+  name: String
+  age: Int
+  email: String
+  field: String
+  experience: Float
+}
+
+type Developer {
+  profile: Engineer
+  language: [String]
+}
+
+type Employee {
+  name: String
+  id: Int!
+  salary: String
+  extraTime: Int
+  bonus: Int
+  nameType: NAMEGENDER
+}
+
+input EmployeeBasicInfo {
+  name: String
+  salary: String
+}
+
+type Query {
+  hello: String
+  email: String
+  age: Float
+  manish: Developer
+  users(id: Int): [Engineer]
+  updateUser(id: Int, name: String): [Engineer]
+  createUser(id: Int, name: String): [Engineer]
+  displayUsers: [Engineer]
+  employees(nameType:NAMEGENDER): [Employee!]!
+}
+
+type Mutation {
+  createUserMutate(id: Int, name: String): String
+  createEmployee(input: EmployeeBasicInfo!): [Employee!]!
+  updateEmployee(id: Int, input: EmployeeBasicInfo): [Employee!]!
+  deleteEmployee(id: Int): [Employee!]!
+}
