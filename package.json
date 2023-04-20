@@ -13,5 +13,10 @@
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
     "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/client-preset": "^3.0.0",
+    "typescript": "^5.0.4"
   }
 }
