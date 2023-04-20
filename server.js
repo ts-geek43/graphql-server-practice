@@ -1,5 +1,6 @@
 var { graphql, buildSchema } = require("graphql");
 var { graphqlHTTP } = require("express-graphql");
+// import { GetDogDocument } from "./src/generated/graphql";
 
 // Construct a schema, using GraphQL schema language
 
@@ -178,3 +179,5 @@ let portNumber = 30000;
 console.log(`Server is running at http://localhost:${portNumber}`);
 
 app.listen(portNumber);
+
+// console.log("Dog document", GetDogDocument);
